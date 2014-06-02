@@ -211,7 +211,7 @@ google.maps.event.addDomListener(window, 'load', initialize);
 //Scroll navigation
 SWEET.menu = function(){
 $("#navigationmenu a, .contanchors a, .backtotop").click(function(event){
-
+if (this.href.search("#") != -1) {
 	event.preventDefault();
 	var full_url = this.href;
 	var parts = full_url.split("#");
@@ -220,7 +220,7 @@ $("#navigationmenu a, .contanchors a, .backtotop").click(function(event){
 	var target_top = target_offset.top;
 
 	$('html,body').animate({scrollTop:target_top -13}, 900);
-	
+}
 });
 }
 //End Scroll navigation
