@@ -23,7 +23,7 @@
     <link rel="apple-touch-icon" sizes="72x72" href="img/favicon/apple-touch-icon-72x72.png">
     <link rel="apple-touch-icon" sizes="114x114" href="img/favicon/apple-touch-icon-114x114.png">
     <!--END FAVICONS-->
-      
+
 </head>  
 <body><!--start navigationmenu-->
 <header id="navigationmenu">
@@ -37,7 +37,7 @@
         		<ul>
                     <li><a href="#testimonials">Testimonials</a></li> <!--you can edit-->
                     <li><a href="#sectionprices">Prices</a></li> <!--you can edit-->
-                    <li><a href="http://google.com">Works</a></li> <!--you can edit-->
+                    <li><a href="#sectionportfolio">Works</a></li> <!--you can edit-->
                 </ul>    
             </nav>
         </div>
@@ -45,7 +45,7 @@
         
         <!--start logo-->
         <div class="grid_2 logo">
-        	<img alt="" src="assets/logo.png" /> <!--Include your logo with size 180px X 239 px-->
+        	<img alt="" src="assets/plc.png" width="180" height="180" /> <!--Include your logo with size 180px X 239 px-->
         </div>
         <!--end logo-->
         
@@ -310,8 +310,7 @@
             
             <!--left testimonial-->
             <div class="grid_6 lefttestimonials">
-                <h2>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse ut neque nulla. Nulla aliquam dictum arcu.</h2> <!--you can edit-->
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse ut neque nulla. Nulla aliquam dictum arcu, eget bibendum diam dapibus a. Maecenas lectus felis, pharetra sit amet dictum quis, semper eu nibh. Praesent placerat massa ut justo gravida placerat. Phasellus. Praesent placerat massa ut justo gravida placerat semper eu nibh.</p> <!--you can edit-->
+
             </div>
             <!--end left testimonial-->
             
@@ -334,6 +333,113 @@
     </div>
     <!--end dark filter-->
       
+</section>
+
+<section id="sectionportfolio">
+    
+    <!--start anchors-->
+    <div class="anchors">
+        <div class="contanchors">
+            <a href="#testimonials"><img class="anchortop" alt="" src="assests/anchors/topportfolio.png" /></a>
+            <a href="#sectionprices"><img class="anchorbottom" alt="" src="assests/anchors/bottomportfolio.png" /></a>
+        </div>
+    </div>
+    <!--end anchors-->
+    
+    <!--start container-->
+    <div class="container clearfix">
+    
+        <!--start titlesection-->
+        <div class="grid_12 titlesection">
+            <h1>My Works</h1>
+        </div>
+        <!--end title section-->
+        
+        <!--start options-->
+        <div class="grid_12">
+            <div id="options" class="clear">
+                <ul id="filters" class="option-set clearfix" data-option-key="filter">
+                    <li class="orange"><a href="#filter" data-option-value="*" class="selected">Show all</a></li>
+                    <li class="yellow"><a href="#filter" data-option-value=".yellow">Cake Design</a></li>
+                    <li class="blue"><a href="#filter" data-option-value=".blue">Cup Cakes</a></li>
+                    <li class="navi"><a href="#filter" data-option-value=".green">Baby Shower</a></li>
+                    <li class="orange"><a href="#filter" data-option-value=".red">Birthday Cakes</a></li>
+                    <li class="yellow"><a href="#filter" data-option-value=".purple">Graduation Cake</a></li>
+                    <li class="blue"><a href="#filter" data-option-value=".teal">Grooms Cakes</a></li>
+                    <li class="navi"><a href="#filter" data-option-value=".grape">Bridal Cakes</a></li>
+                </ul>
+            </div>
+        </div>
+        <!--end options-->
+              
+
+              
+        <!--start images-->
+        <div id="containerisotope" class="clear">    
+
+          <% @mobile_pictures[0..10].each do |pic| %>
+              <div class="element yellow" data-category="yellow">
+                  <a data-rel="prettyPhoto[]" href=<%= pic.url %>>
+                      <img alt="" class="imgwork" src=<%= pic.url %> />
+                  </a>
+              </div>
+          <% end %>
+
+          <% @cupcake_pictures[0..10].each do |pic| %>
+              <div class="element blue" data-category="blue">
+                  <a data-rel="prettyPhoto[]" href=<%= pic.url %>>
+                      <img alt="" class="imgwork" src=<%= pic.url %> />
+                  </a>
+              </div>
+          <% end %>
+            
+          <% @baby_shower_pictures[0..10].each do |pic| %>
+              <div class="element green" data-category="green">
+                  <a data-rel="prettyPhoto[]" href=<%= pic.url %>>
+                      <img alt="" class="imgwork" src=<%= pic.url %> />
+                  </a>
+              </div>
+          <% end %>
+
+          <% @birthday_cake_pictures[0..10].each do |pic| %>
+              <div class="element red" data-category="red">
+                  <a data-rel="prettyPhoto[]" href=<%= pic.url %>>
+                      <img alt="" class="imgwork" src=<%= pic.url %> />
+                  </a>
+              </div>
+          <% end %>
+
+          <% @graduation_cake_pictures[0..10].each do |pic| %>
+              <div class="element purple" data-category="purple">
+                  <a data-rel="prettyPhoto[]" href=<%= pic.url %>>
+                      <img alt="" class="imgwork" src=<%= pic.url %> />
+                  </a>
+              </div>
+          <% end %>
+
+          <% @grooms_cake_pictures[0..10].each do |pic| %>
+              <div class="element teal" data-category="teal">
+                  <a data-rel="prettyPhoto[]" href=<%= pic.url %>>
+                      <img alt="" class="imgwork" src=<%= pic.url %> />
+                  </a>
+              </div>
+          <% end %>
+
+          <% @bridal_cake_pictures[0..10].each do |pic| %>
+              <div class="element grape" data-category="grape">
+                  <a data-rel="prettyPhoto[]" href=<%= pic.url %>>
+                      <img alt="" class="imgwork" src=<%= pic.url %> />
+                  </a>
+              </div>
+          <% end %>
+
+              
+        </div>
+        <!--end images-->
+
+    </div>
+    <!--end container-->   
+    
 </section>
 
 

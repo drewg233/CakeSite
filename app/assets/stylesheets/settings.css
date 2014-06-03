@@ -476,8 +476,8 @@
 															-khtml-opacity: 0;
 															opacity: 0;
 														}
-.tp-leftarrow											{	z-index:100;cursor:pointer; position:relative;	background:url(./slide/large_left.png) no-Repeat top left;	width:40px;	height:40px;   }
-.tp-rightarrow											{	z-index:100;cursor:pointer; position:relative;	background:url(./slide/large_right.png) no-Repeat top left;	width:40px;	height:40px;   }
+.tp-leftarrow											{	z-index:100;cursor:pointer; position:relative;	background:url(./slide/large_left1.png) no-Repeat top left;	width:40px;	height:40px;   }
+.tp-rightarrow											{	z-index:100;cursor:pointer; position:relative;	background:url(./slide/large_right1.png) no-Repeat top left;	width:40px;	height:40px;   }
 
 
 .tp-leftarrow.round										{	z-index:100;cursor:pointer; position:relative;	background:url(./slide/small_left.png) no-Repeat top left;	width:19px;	height:14px;  margin-right:0px; float:left; margin-top:-7px;	}
@@ -506,10 +506,10 @@
 .tp-rightarrow.square-old								{	z-index:100;cursor:pointer; position:relative;	background:url(./slide/arrow_right2.png) no-Repeat top left;	width:12px;	height:17px;   float:left;	margin-left:0px; margin-top:-9px;}
 
 
-.tp-leftarrow.default									{	z-index:100;cursor:pointer; position:relative;	background:url(./slide/large_left.png) no-Repeat 0 0;	width:40px;	height:40px;
+.tp-leftarrow.default									{	z-index:100;cursor:pointer; position:relative;	background:url(./slide/large_left1.png) no-Repeat 0 0;	width:40px;	height:40px;
 
 														}
-.tp-rightarrow.default									{	z-index:100;cursor:pointer; position:relative;	background:url(./slide/large_right.png) no-Repeat 0 0;	width:40px;	height:40px;
+.tp-rightarrow.default									{	z-index:100;cursor:pointer; position:relative;	background:url(./slide/large_right1.png) no-Repeat 0 0;	width:40px;	height:40px;
 
 														}
 

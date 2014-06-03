@@ -82,6 +82,7 @@ SWEET.gallery = function(){
 	itemSelector : '.element'
   });
   
+	console.log($container[0].children.length)
   
   var $optionSets = $('#options .option-set'),
 	  $optionLinks = $optionSets.find('a');
@@ -89,7 +90,7 @@ SWEET.gallery = function(){
   $optionLinks.click(function(){
 	var $this = $(this);
 	// don't proceed if already selected
-	if ( $this.hasClass('selected') ) {
+	if ($this.hasClass('selected')) {
 	  return false;
 	}
 	var $optionSet = $this.parents('.option-set');
