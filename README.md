@@ -1,6 +1,6 @@
 CakeSite
 ========
 
-This is a CakeWebsite built for a local company who needs a site.
+Local Cake Company website. It pulls images from facebook every 3 hours and puts it in my Postgresql database. It then displays all the facebook pictures in a cool way.
 
-**Still in the works.
+Still in the works.
