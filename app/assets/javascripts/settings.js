@@ -82,15 +82,16 @@ SWEET.gallery = function(){
 	itemSelector : '.element'
   });
   
-	console.log($container[0].children.length)
-  
+ 
+	  
   var $optionSets = $('#options .option-set'),
 	  $optionLinks = $optionSets.find('a');
-
+var pagegenation = 8;
   $optionLinks.click(function(){
+		
 	var $this = $(this);
 	// don't proceed if already selected
-	if ($this.hasClass('selected')) {
+	if ( $this.hasClass('selected') ) {
 	  return false;
 	}
 	var $optionSet = $this.parents('.option-set');
@@ -101,6 +102,39 @@ SWEET.gallery = function(){
 	var options = {},
 		key = $optionSet.attr('data-option-key'),
 		value = $this.attr('data-option-value');
+		//alert(value);
+		var products = 0;
+		var selecter = '';
+		if(value == '*'){
+			products = $(".element").length;
+			selecter = $(".element");
+				//alert(products);
+		} else {
+			products = $("[data-category~='"+value.slice(1)+"']").length;
+			selecter = $("[data-category~='"+value.slice(1)+"']");
+		}
+		//alert(value);
+		var counter = 1;
+		var valsele = "'"+value+"'";
+		
+		
+		var last_val = products % pagegenation
+		var pager = 0;
+		if(last_val > 0){
+			pager = (products-(products % pagegenation))/pagegenation + 1;
+		} else {
+			pager = products/pagegenation;	
+		}
+		$("#pager_val").remove();
+		if(pager > 1){
+			var page_text = '<div id="pager_val">';				
+			for (var i = 0; i < pager; i++) {
+				var j = i+1;
+    			page_text+='<span style="background-color:#94cdc6; border-bottom:2px solid #528e84; margin: 5px;padding: 5px;"><a href="#" style="color:white;" onclick="return pagercall('+j+','+products+','+valsele+');">'+j+'</a></span>';
+			}
+			page_text+='</div>';			
+			$("#pager").append(page_text);
+		}
 	// parse 'false' as false boolean
 	value = value === 'false' ? false : value;
 	options[ key ] = value;
@@ -112,13 +146,63 @@ SWEET.gallery = function(){
 	  $container.isotope( options );
 	}
 	
+	jQuery("#containerisotope").css({"height":"620px","top":"0"});
+		var pagistart = 1 ;
+		var pagiend = pagistart + pagegenation -1 ;
+		var reanslate_w = 0;
+		var reanslate_h = 0;
+		var counter_1 = 1;
+		if(value == '*'){
+				$(selecter).each(function() {	
+				$(this ).removeClass( "isotope-hidden" );
+				
+				//$(this ).removeClass( "nonpager" );
+				//$( this ).removeClass("nonpager");	
+			//alert(pagistart);alert(pagiend);
+				if((counter >= pagistart ) && (counter <= pagiend)){
+					if((counter_1 % 5) == 0){
+						reanslate_w = 0;
+						reanslate_h = (counter_1 / 5)*310;
+					}
+					jQuery( this ).css({"transform": "translate("+reanslate_w+"px, "+reanslate_h+"px)","scale":"(1, 1)","opacity":"1"});
+					reanslate_w = reanslate_w +300;	
+					counter_1 = counter_1 + 1;
+				} else {
+					jQuery( this ).addClass( "isotope-hidden" );
+					jQuery( this ).css({"transform": "translate(0px,0px)","scale":"(0.001,0.001)","opacity":"0"});
+				}
+				counter = counter + 1;
+				//alert(counter);
+			});
+		} else {
+			$(selecter).each(function() {	
+				$(this ).removeClass( "isotope-hidden" );
+				
+				//$(this ).removeClass( "nonpager" );
+				//$( this ).removeClass("nonpager");	
+			//alert(pagistart);alert(pagiend);
+					if((counter >= pagistart ) && (counter <= pagiend)){
+						if((counter_1 % 5) == 0){
+						reanslate_w = 0;
+						reanslate_h = (counter_1 / 5)*310;
+					}
+					jQuery( this ).css({"transform": "translate("+reanslate_w+"px, "+reanslate_h+"px)","scale":"(1, 1)","opacity":"1"});
+					reanslate_w = reanslate_w +300;
+					counter_1 = counter_1 + 1;
+				} else {
+					jQuery( this ).addClass( "isotope-hidden" );
+					jQuery( this ).css({"transform": "translate(0px,0px)","scale":"(0.001,0.001)","opacity":"0"});
+				}
+				counter = counter + 1;
+				//alert(counter);
+			});
+		}
 	return false;
   });
 
   
 }
 //end isotope
-
 
 
 //map
