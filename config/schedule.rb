@@ -21,6 +21,5 @@
 
 
 every 3.hours do
-	Pictures.delete_all
-  runner "Job.get_pics"
+  runner "Job.get_mobile"
 end
