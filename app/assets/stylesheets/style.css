@@ -534,7 +534,7 @@ nav a:hover{
 #sectionskills{
 	width:100%;
 	float:left;
-	background-image:url(./patterns/pink-bg.png);
+	background-image:url(./patterns/purp-bg.png);
 	background-repeat:repeat;
 	background-attachment:fixed;		
 }
@@ -779,7 +779,7 @@ nav a:hover{
 .container{
 	width:1200px;
 	margin:auto;
-	padding:60px 0px 90px 0px;	
+	padding:30px 0px 40px 0px;	
 }
 .titlesection h1{
 	margin:50px 20px;
