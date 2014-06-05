@@ -5,4 +5,4 @@ Local Cake Company website. It pulls images from facebook every 3 hours and puts
 
 ![alt text](https://raw.githubusercontent.com/drewg233/CakeSite/master/app/assets/images/peace.png)
 
-Still in the works.
+[See Project Here](http://peaceloveandcakes.herokuapp.com/)
